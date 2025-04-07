@@ -29,11 +29,6 @@ int main() {
 		if (binary_search(v1.begin()+i+1, v1.end(), v2[i])) {
 			cnt++;
 		}
-		/*
-		if (find(v1.begin() + i + 1, v1.end(), v2[i]) != v1.end()) {
-			cnt++;
-		}
-		*/
 	}
 
 	cout << cnt;
