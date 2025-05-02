@@ -10,17 +10,17 @@ int main() {
 	cout.tie(0);
 
 	vector<int> v;
-	int N, L, w, cnt = 0, result = 1, tmp = 0;
+	int N, L, w, cnt = 0, result = 1;
 	cin >> N >> L;
 	for (int i = 0; i < N; i++) {
 		cin >> w;
 		v.push_back(w);
 	}
 	sort(v.begin(), v.end());
-	tmp = v[0] + L - 1;
+	cnt = v[0] + L - 1;
 	for (int i = 0; i < v.size(); i++) {
-		if (v[i] > tmp) {
-			tmp = v[i] + L - 1;
+		if (v[i] > cnt) {
+			cnt = v[i] + L - 1;
 			result++;
 		}
 	}	
