@@ -17,17 +17,17 @@ int main() {
 	for (int i = 0; i < v.size(); i++)
 		cin >> v[i];
 
-	sort(v.begin(), v.end());
+	sort(v.begin(), v.end());				//정렬
 
-	long long result = v[0];
-	int maxcnt = 1, curcnt = 1;
+	long long result = v[0];				//결과값
+	int maxcnt = 1, curcnt = 1;				//최빈값 빈도수, 현재 빈도수
 	for (int i = 1; i < v.size(); ++i) {
-		if (v[i] == v[i - 1])
+		if (v[i] == v[i - 1])				//이전이랑 같으면 curcnt 증가
 			curcnt++;
 		else
-			curcnt = 1;
+			curcnt = 1;						//다르면 curcnt 1
 
-		if (curcnt > maxcnt) {
+		if (curcnt > maxcnt) {				//maxcnt 갱신
 			maxcnt = curcnt;
 			result = v[i];
 		}
