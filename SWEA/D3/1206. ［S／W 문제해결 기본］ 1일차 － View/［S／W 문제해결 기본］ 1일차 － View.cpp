@@ -11,9 +11,7 @@ int main(int argc, char** argv)
     cout.tie(NULL);
 
     int test_case;
-    int T;
-
-    T=10;
+    int T=10;
 
     vector<int> result;
     for (test_case = 1; test_case <= T; ++test_case)
@@ -39,9 +37,6 @@ int main(int argc, char** argv)
             }
         }
         result.push_back(sum);
-        //for (int i = 0; i < N; i++)
-        //    cout << v[i] << " ";
-        //cout << endl;
         v.clear();
 
 
