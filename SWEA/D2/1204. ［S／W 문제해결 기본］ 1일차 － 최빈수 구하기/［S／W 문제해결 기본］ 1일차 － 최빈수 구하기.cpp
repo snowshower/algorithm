@@ -6,12 +6,12 @@
 
 using namespace std;
 
-bool compare(pair<int, int> a, pair<int, int>b) {
-	if (a.second != b.second)
-		return a.second > b.second;
-
-	return a.first > b.first;
-}
+//bool compare(pair<int, int> a, pair<int, int>b) {
+//	if (a.second != b.second)
+//		return a.second > b.second;
+//
+//	return a.first > b.first;
+//}
 
 int main(int argc, char** argv)
 {
@@ -23,27 +23,23 @@ int main(int argc, char** argv)
 	{
 		int n;
 		cin >> n;
-		vector<int> v(1000);
-		for (int i = 0; i < v.size(); i++) {
-			cin >> v[i];
+		int x;
+		int result[101] = { 0, };
+		for (int i = 0; i < 1000; i++) {
+			cin >> x;
+			result[x]++;
 		}
 
-		sort(v.begin(), v.end());
-
-		vector<pair<int, int>> ans;
-		
-		int cnt = 0;
-
-		for (int i = 0; i < v.size(); i++) {
-			cnt = count(v.begin(), v.end(), v[i]);
-			ans.push_back({ v[i], cnt });
+		int max = 0;
+		int ans = 0;
+		for (int i = 0; i < 101; i++) {
+			if (max <= result[i]) {
+				max = result[i];
+				ans = i;
+			}
 		}
 
-		sort(ans.begin(), ans.end(), compare);
-
-		int result = ans[0].first;
-
-		cout << "#" << test_case << " " << result << "\n";
+		cout << "#" << test_case << " " << ans << "\n";
 		
 
 	}
