@@ -23,7 +23,7 @@ int main(int argc, char** argv)
 			if (s[i] == s[j])
 				ans = 1;
 			else
-				ans = 0;
+				ans = 0; break;
 		}
 
 		cout << "#" << test_case << " " << ans << "\n";
